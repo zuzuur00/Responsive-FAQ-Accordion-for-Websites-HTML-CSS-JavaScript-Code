@@ -1,0 +1,144 @@
+<!-- Responsive FAQ Accordion for Websites | HTML, CSS & JavaScript Code by [propakistanitools.com] -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 10px;
+    }
+
+    .faq-container {
+      max-width: 600px;
+      /*Set the container to full width as needed. */
+      margin: auto;
+    }
+
+    .faq-card {
+      background: #ebe4ff;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      width: 100%;
+      text-align: left;
+      background: #d5c4ff;
+      /* change the background color */
+      color: #333;
+      /* change the text color */
+      border: none;
+      padding: 15px;
+      /* adjust the box padding, height */
+      font-size: 18px;
+      /* adjust the font size */
+      cursor: pointer;
+      outline: none;
+      display: flex;
+      align-items: center;
+      border-radius: 8px;
+    }
+
+    .faq-question:hover {
+      background: #d5c4ff !important;
+      color: #333 !important;
+      cursor: default !important;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      padding: 0 15px;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+      background: white;
+      font-size: 16px;
+      /* adjust the answer font size */
+      color: #333;
+      border-left: 5px solid #7b61ff;
+    }
+
+    .faq-question.active+.faq-answer {
+      max-height: none;
+      padding: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="faq-container">
+    <div class="faq-card">
+      <button class="faq-question">What makes this accordion section the best choice for creative FAQ designs?</button>
+      <div class="faq-answer">
+        <p>This section uses a clean accordion style that looks great in modern layouts and is easy to open on first click.</p>
+
+        <p>From unique designs to practical usage, this tool offers the best format for FAQs that stand out naturally.</p>
+
+      </div>
+    </div>
+    <div class="faq-card">
+      <button class="faq-question">Question 2</button>
+      <div class="faq-answer">
+        <p>Answer to Question 2.</p>
+      </div>
+    </div>
+
+    <div class="faq-card">
+      <button class="faq-question">Question 3</button>
+      <div class="faq-answer">
+        <p>Answer to Question 3.</p>
+
+        <p> </p> <!-- Add a second paragraph inside the <p> tag here -->
+        <!-- If you don’t need a second paragraph, leave the <p> tag empty -->
+      </div>
+    </div>
+
+    <div class="faq-card">
+      <button class="faq-question">Question 4</button>
+      <div class="faq-answer">
+        <p>Answer to Question 4.</p>
+
+        <p> </p> <!-- Add a second paragraph inside the <p> tag here -->
+        <!-- If you don’t need a second paragraph, leave the <p> tag empty -->
+      </div>
+    </div>
+
+    <div class="faq-card">
+      <button class="faq-question">Question 5</button>
+      <div class="faq-answer">
+        <p>Answer to Question 5.</p>
+
+        <p> </p> <!-- Add a second paragraph inside the <p> tag here -->
+        <!-- If you don’t need a second paragraph, leave the <p> tag empty -->
+      </div>
+    </div>
+    <!-- Add more FAQ items as needed -->
+    
+    <p style="text-align:center; margin-top:20px;">Explore 19 more FAQ designs at <a href="https://zuzuur.com/faq-accordion-html-css-javascript/" target="_blank">Zuzuur</a></p>
+
+  </div>
+
+  <script>
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        document.querySelectorAll('.faq-question').forEach(btn => {
+          if (btn !== button) {
+            btn.classList.remove('active');
+            btn.nextElementSibling.style.maxHeight = '0';
+          }
+        });
+        button.classList.toggle('active');
+        let answer = button.nextElementSibling;
+        if (button.classList.contains('active')) {
+          answer.style.maxHeight = answer.scrollHeight + 'px'; // Adjusts height dynamically
+        } else {
+          answer.style.maxHeight = '0';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
